@@ -1,7 +1,5 @@
-#include <stdio.h>
-
 #include "main.h"
-
+#include <stdio.h>
 
 /**
  * main - Print the name of the program
@@ -21,5 +19,9 @@ int count = 0;
 if (argc > 0)
 {
 /*WHILE - Print each arguments*/
+while (count < argc)
 {
-printf("%s\n", argv[count]);
+	printf("%s\n", argv[count]);
+}
+}
+}
