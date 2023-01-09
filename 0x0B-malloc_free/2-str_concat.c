@@ -3,25 +3,49 @@
 
 
 /**
- * _calloc - Allocates memory for an array of a certain number
- * of elements each of an inputted byte size.
- * @nmemb: The number of elements.
- * @size: The byte size of each array element
+ * str_concat - concatenates two strings
+ * @s1: string to concatenate
+ * @s2: other string to concatenate
  *
- * Return: If nmemb = 0, size = 0, or the function fails - NULL.
- * Otherwise - a pointer to the allocated memory.
+ *
+ * Return: pointer to the new string created (Success), or NULL (Error)
  */
 
-void *_calloc(unsigned int nmemb, unsigned int size)
+char *str_concat(char *s1, char *s2)
 {
-	void *mem;
-	char *filler;
-	unsigned int index;
+	char *s3;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	if (nmemb == 0 || size == 0)
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
+	s3 = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (s3 == NULL)
 		return (NULL);
+	i = 0;
+	j = 0;
 
-	for (index = 0; index < (size * nmemb); index++)
-		filler[index] = '\0';
-	return (mem);
+	if (s1)
+	{
+		while (i < len1)
+		{
+			s3[i] = s1[i];
+			i++;
+		}
+	}
+}
+
+if (s2)
+{
+	while (i < (len1 + len2))
+	{
+		s3[i] = s2[j];
+		i++;
+		j++;
+	}
+}
+s3[i] = '\0';
+
+return (s3);
 }
