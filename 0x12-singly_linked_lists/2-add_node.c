@@ -23,9 +23,9 @@ list_t *add_node(list_t **head, const char *str)
 
 		temp->str = strdup(str);
 		temp->len = _strlen(str);
-		temp->next = *head;
+		temp->next = (*head);
 
-		*head = temp;
+		(*head) = temp;
 
 		return (temp);
 	}
@@ -36,6 +36,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	/**
 	 * _strlen - Returns the length of a string
+	 * @str: string - (malloc'ed string)
 	 * @s: String to count
 	 *
 	 * Return: String length
